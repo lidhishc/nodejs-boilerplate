@@ -1,3 +1,4 @@
-const router = require("express").Router();
+const express = require('express')
+const Joi = require('joi')
 
-module.exports = { router };
+module.exports = { router: express.Router(), express, Joi }
