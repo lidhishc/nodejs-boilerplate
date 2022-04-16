@@ -1,11 +1,13 @@
 /* eslint-disable no-console */
 require('dotenv').config()
-const PORT = process.env.PORT || 3030
 const app = require('./app')
+const {
+    server: { port },
+} = require('./config/config')
 
-app.listen(PORT, (err) => {
+app.listen(port, (err) => {
     if (err) {
         console.log('Something went wrong')
     }
-    console.log('Server is running on port %s', PORT)
+    console.log('Server is running on port %s', port)
 })
