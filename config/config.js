@@ -1,12 +1,21 @@
 'use strict'
 
+const { NODE_ENV, PORT, USER_NAME, PASSWORD, DB_NAME, DB_HOST } = process.env
 const config = {
-    env: process.env.NODE_ENV,
+    env: NODE_ENV,
     logger: {
-        level: process.env.NODE_ENV === 'production' ? 'tiny' : 'dev',
+        level: NODE_ENV === 'production' ? 'tiny' : 'dev',
     },
     server: {
-        port: Number(process.env.PORT),
+        port: Number(PORT),
+    },
+    database: {
+        username: USER_NAME,
+        password: PASSWORD,
+        database: DB_NAME,
+        host: DB_HOST,
+        dialect: 'postgres',
+        logging: false,
     },
 }
 
